@@ -22,13 +22,18 @@
                     <label for="">Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input type="password" class="password-signup" required>
                     <label for="">Password</label>
+                </div>
+
+                <div class="input-group checkbox">
+                    <input type="checkbox" id="showPasswordSignUp">
+                    <label  class="checkbox-label"  for="showPasswordSignUp">Show Password</label>
                 </div>
                
                 <button type="submit" class="btn">Sign Up</button>
                 <div class="sign-link">
-                    <p>Already have an account? <a href="#" class="SignIn-link">Sign In</a></p>
+                    <p>Already have an account? <a href="#" class="signIn-link">Sign In</a></p>
                 </div>
             </form>
         </div>
@@ -41,9 +46,15 @@
                     <label for="">Username</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input type="password"  class="password-signin" required>
                     <label for="">Password</label>
                 </div>
+
+                <div class="input-group checkbox">
+                    <input type="checkbox" id="showPasswordSignIn">
+                    <label class="checkbox-label" for="showPasswordSignIn">Show Password</label>
+                </div>
+
                 <div class="forget-pass">
                     <a href="#">Forgot Password?</a>
                 </div>

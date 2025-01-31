@@ -10,124 +10,58 @@ html, body {
     width: 100%;
     height: 100%;
 }
-
-.container-header {
-    width: 100%;
-    height: 60px;
-    background-color: #8ecae6; /* Background Color */
-    display: flex;
-    justify-content: space-between; /* Space between logo, navbar, and buttons */
-    align-items: center;
-    padding: 0 20px;
-    border-bottom: 2px solid black;
+.nav_logo{
+    height: 40px;
+    width: auto;
+}
+/* Navbar Background */
+.custom-navbar {
+    background-color: #8ECAE6;  /* Light blue */
+    transition: background-color 0.3s ease;
 }
 
-/* Logo on the left */
-.logo img{
-    width: 120px;
-    height: 90%;
+
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-weight: bold;
+    margin-left: 20px;
+    color: #023047;  /* Dark Blue */
+    transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* Navbar centered */
-.navbar {
-    flex: 1; /* Navbar will take available space */
-    display: flex;
-    justify-content: center;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-}
-
-.navbar ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #023047; /* Text Color */
-    font-size: 18px;
-    padding: 10px 15px;
-    transition: 0.3s;
-}
-
-.navbar ul li a:hover {
+/* Hover Effect - Slightly Larger */
+.navbar-nav .nav-link:hover {
+    color: #011A2C;  /* Even Darker Blue */
+    transform: scale(1.05);
     background-color: #219ebc; /* Hover Color */
     border-radius: 5px;
-    transform: scale(1.1); /* Zoom in effect */
 }
 
-/* Buttons aligned to the right */
-.button {
-    display: flex;
-    gap: 10px;
-    margin-left: auto; /* Aligns buttons to the right side */
+/* Custom Buttons */
+.custom-btn-1 {
+    background-color: #8ecae6 !important;  /* Dark Blue */
+    color:  #023047 !important;
+    border: 1px solid #023047 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.custom-btn-2 {
+    background-color: #023047 !important;  /* Dark Blue */
+    color: white !important;
+    border: 2px solid #023047 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.button button {
-    padding: 8px 15px;
-    border: none;
-    background-color: #023047; /* Button Color */
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+/* Button Hover Effect */
+.custom-btn-1:hover {
+    background-color: #219ebc !important;  /* Even Darker Blue */
+    transform: scale(1.05);
+    
 }
-
-.button .sign-in{
-    background-color: #8ecae6;
-    border: 1px solid #023047;
-    color: #023047;
+.custom-btn-2:hover {
+    transform: scale(1.05);
+    
 }
-
-.button button:hover {
-    background-color: #219ebc; /* Highlight Color on hover */
-    transform: scale(1.1); /* Zoom in effect */
-}
-
-/* Ensure both navbar and buttons are in the same line */
-.container-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-    .container-header {
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px;
-        position: relative;
-    }
-
-    .navbar {
-        position: fixed;
-        transform: none;
-        justify-content: center;
-        width: 100%;
-        margin-top: 0;
-    }
-
-    .navbar ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .button {
-        margin-left: auto; /* Keep buttons on the right */
-    }
-
-}
-
 .image {
     position: relative;
     height: 500px;

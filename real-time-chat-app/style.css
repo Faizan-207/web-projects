@@ -30,9 +30,9 @@ html, body {
 
 /* Navbar centered */
 .navbar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex: 1; /* Navbar will take available space */
+    display: flex;
+    justify-content: center;
 }
 
 .navbar ul {
@@ -109,7 +109,7 @@ html, body {
     }
 
     .navbar {
-        position: static;
+        position: fixed;
         transform: none;
         justify-content: center;
         width: 100%;
@@ -165,4 +165,71 @@ html, body {
 /* Styling for the highlighted part of the text */
 .marketing-text h1 span {
     color: #fff; /* Highlight color */
+}
+
+.services{
+    color: #023047;
+}
+
+.services span{
+    color: #ffb703;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.services-container div {
+    position: relative;
+    width: 100%; /* Grid items take full width */
+    height: 250px; /* Adjust height */
+    text-align: center;
+}
+
+.services-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Center Button */
+.services-container button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering button */
+    padding: 8px 12px;
+    border: 1px solid #ffb703;
+    background: transparent;
+    color: #023047;
+    font-weight: 500;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.services-container button:hover {
+    background-color: #219ebc;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .services-container {
+        grid-template-columns: repeat(1, 1fr); /* Single column on very small screens */
+    }
 }

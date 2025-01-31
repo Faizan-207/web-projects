@@ -327,6 +327,14 @@ footer {
     font-size: 14px;
     color: #fb8500;
 }
+.footer-links a img {
+    height: 20px;
+    width: 20px;
+}
+.footer-links a img:hover {
+    transform: scale(1.2);  /* Hover effect to enlarge icons */
+   
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {

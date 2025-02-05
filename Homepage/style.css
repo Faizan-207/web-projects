@@ -343,7 +343,7 @@ footer {
     }
 
     .footer-section .social a {
-        flex: 0 1 50px;  /* Bigger icons for smaller screens */
+        flex: 0 1 50px;  
     }
 }
 
@@ -353,6 +353,10 @@ footer {
     }
 
     .footer-section .social a {
-        flex: 0 1 60px;  /* Even larger icons for very small screens */
+        flex: 0 1 60px;  
     }
+}
+
+.admin{
+    display: none;
 }

@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Rubik';
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+.nav_logo{
+    height: 40px;
+    width: auto;
+}
+/* Navbar Background */
+.custom-navbar {
+    background-color: #8ECAE6;  /* Light blue */
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    position: relative;
+    font-weight: bold;
+    margin-left: 20px;
+    color: #023047;  
+    /* transition: transform 0.2s ease, color 0.3s ease; */
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover Effect - Slightly Larger */
+.navbar-nav .nav-link:hover {
+    color: #011A2C;  
+    transform: scale(1.05);
+    background-color: #219ebc; 
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link {
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-nav:hover .nav-link {
+    filter: blur(3px); /* Blur all links */
+}
+
+.navbar-nav .nav-link:hover {
+    filter: blur(0px); /* Keep hovered link clear */
+    width: 100%;
+}
+
+
+
+.custom-btn-1 {
+    background-color: #8ecae6 !important;  
+    color:  #023047 !important;
+    border: 1px solid #023047 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.custom-btn-2 {
+    background-color: #023047 !important;
+    color: white !important;
+    border: 2px solid #023047 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.custom-btn-1:hover {
+    background-color: #219ebc !important;
+    transform: scale(1.05);
+    
+}
+.custom-btn-2:hover {
+    transform: scale(1.05);
+    
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    gap: 10px;
+    margin-top: 7px;
+}
+
+.buttons button{
+    background-color: #023047 !important;  /* Dark Blue */
+    color: white !important;
+    border: 2px solid #023047 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 70px;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    transform: scale(1.05);
+    background-color: #219ebc !important;
+    border: 1px solid #ffb703 !important;
+}
+
+.container{
+    border: 1px solid #ffb703;
+    
+}
+
+table th {
+    background-color: #023047 !important;  
+    color: #219ebc !important;
+}
+
+.table-bordered {
+    border: 2px solid #ffb703; 
+}
+
+table td{
+    background-color: #219ebc !important;
+    color: #023047;
+}
+
+/* Modal Background */
+.modal-content {
+    background-color: #8ecae6;  /* Light blue, matching the navbar */
+    border: 2px solid #ffb703;  /* Yellow border */
+    border-radius: 10px;
+    color: #023047;  /* Dark blue text */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: #023047;  /* Dark blue */
+    color: #ffb703;  /* Yellow text */
+    border-bottom: 2px solid #ffb703;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+/* Modal Title */
+.modal-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffb703;  /* Yellow highlight */
+}
+
+/* Close Button */
+.modal-header .btn-close {
+    background-color: #ffb703;
+    border-radius: 50%;
+    opacity: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-header .btn-close:hover {
+    transform: scale(1.2);
+}
+
+/* Modal Body */
+.modal-body {
+    background-color: #8ecae6;  /* Light blue */
+    color: #023047;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.modal-body input{
+    background: transparent;
+}
+
+/* Modal Footer */
+.modal-footer {
+    background-color: #023047; 
+    border-top: 2px solid #ffb703;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Modal Buttons */
+.modal-footer .btn {
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background: linear-gradient(to right, #1E3A8A, #ffb703);
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+
+
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+footer {
+    background-color: #8ecae6;
+    color: #fb8500;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    color: #023047;
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fb8500;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #023047;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section ul li a:hover {
+    color: #219ebc;
+}
+
+.footer-section .social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.footer-section .social a {
+    flex: 0 1 40px; /* Adjusted to make icons slightly larger */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-section .social a img {
+    width: 25px;  /* Slightly increased size for better visibility */
+    height: 25px;
+    object-fit: contain;  /* Ensures image remains proportional */
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-section .social a img:hover {
+    transform: scale(1.1);  /* Hover effect to enlarge icons */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #ffb703;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #fb8500;
+}
+.footer-links a img {
+    height: 20px;
+    width: 20px;
+}
+.footer-links a img:hover {
+    transform: scale(1.2);  /* Hover effect to enlarge icons */
+   
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-section .social a {
+        flex: 0 1 50px;  
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section .social a {
+        flex: 0 1 60px;  
+    }
+}

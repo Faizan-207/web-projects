@@ -124,7 +124,7 @@ h2 {
     color: #023047;
     padding: 0 10px;
     background: transparent;
-    border: 1px solid #fb8500;
+    border: 1px solid #ffb703;
     outline: none;
     border-radius: 5px;
 }
@@ -174,7 +174,7 @@ h2 {
 }
 
 .sign-link p {
-    color: #fb8500;
+    color: #023047;
 }
 
 .sign-link p a {
@@ -192,7 +192,7 @@ h2 {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    accent-color: #fb8500;
+    accent-color: #ffb703;
     vertical-align: middle;
     background-color: #8ecae6;
     border: 1px solid #ffb703;
@@ -200,7 +200,7 @@ h2 {
 
 .input-group .checkbox-label {
     font-size: 20px;
-    color: #ffb703;
+    color: #023047;
     left: 20px;
     margin-top: 10px;
     pointer-events: none;
@@ -222,6 +222,4 @@ h2 {
     cursor: pointer;
 }
 
-.input-group input[type="checkbox"]:focus + label {
-    color: #fb8500;
-}
+

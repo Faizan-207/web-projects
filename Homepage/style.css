@@ -125,7 +125,7 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #023047;
+    color: #8ecae6;
     font-family: Arial, sans-serif;
 }
 
@@ -141,7 +141,7 @@ html, body {
 
 
 .marketing-text h1,p span {
-    color: #219ebc; 
+    color: #ffb703; 
 }
 
 .services{
@@ -250,18 +250,41 @@ html, body {
 }
 
 .feature {
-    background: linear-gradient(to top left, #1E3A8A, #ffb703);
+    background: transparent;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    --c: #023047; /* Neon border color */
+    --b: 10px;    /* Border thickness */
+    --g: 5px;     /* Gap on hover */
+
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%, var(--c) 0;
+    background: 
+      conic-gradient(from 180deg at top    var(--b) right var(--b), var(--_g))
+       var(--_i,200%) 0  /200% var(--_i,var(--b))  no-repeat,
+      conic-gradient(            at bottom var(--b) left  var(--b), var(--_g))
+       0   var(--_i,200%) /var(--_i,var(--b)) 200%  no-repeat;
+
+    transition: .3s, background-position .3s .3s, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
 }
 
+/* 🌟 Neon Effect ONLY on Hover */
 .feature:hover {
+    --_i: 100%;
     transform: scale(1.05);
-    background-color: #011A2C;
+    transition: .3s, background-size .3s .3s;
+    /* background-color: #fb8500; */
+    
+    /* 🔥 More Glow on Hover */
+    box-shadow: 0 0 15px var(--c), 0 0 40px var(--c), 0 0 60px var(--c);
 }
+
+  
+
 
 .feature img {
     width: 60px;
@@ -403,3 +426,16 @@ footer {
 .admin{
     display: none;
 }
+
+.swiper{
+    width: 80%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+

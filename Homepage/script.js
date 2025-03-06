@@ -9,4 +9,4 @@ function changeImage() {
     index = (index + 1) % images.length;
 }
 
-setInterval(changeImage, 3000); // Change image every 3 seconds
+setInterval(changeImage, 2000); 

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo-removebg-preview.png" alt="Logo" class="img-fluid nav_logo" style="max-height: 50px;">
+            </a>
+    
+            <!-- Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">  <!-- Centering Links -->
+                    <li class="nav-item"><a class="nav-link" href="/Admin/admin.html">Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Homepage/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/About Us/aboutUs.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Contact us/contactUS.html">Contact Us</a></li>
+                </ul>
+    
+                <!-- Buttons -->
+                <div>
+                    <a href="/Sign-in/SignIn.html#sign-in" class="btn custom-btn-1 me-2">Sign In</a>
+                    <a href="/Sign-in/SignIn.html#sign-up" class="btn custom-btn-2">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Book Your Event</h2>
+        <form>
+            <div class="row mb-3">
+                <!-- Event Type -->
+                <div class="col-md-6">
+                    <label for="eventType" class="form-label">Event Type</label>
+                    <select class="form-select" id="eventType" required>
+                        <option value="" selected disabled>Select Event Type</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="birthday">Birthday Party</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="concert">Concert</option>
+                    </select>
+                </div>
+                
+                <!-- Number of Guests -->
+                <div class="col-md-6">
+                    <label for="guests" class="form-label">Number of Guests</label>
+                    <input type="number" class="form-control" id="guests" placeholder="Enter number of guests" required>
+                </div>
+            </div>
+    
+            <div class="row mb-3">
+                <!-- Date & Time -->
+                <div class="col-md-6">
+                    <label for="eventDate" class="form-label">Event Date & Time</label>
+                    <input type="datetime-local" class="form-control" id="eventDate" required>
+                </div>
+    
+                <!-- Venue Location -->
+                <div class="col-md-6">
+                    <label for="venue" class="form-label">Venue Location</label>
+                    <input type="text" class="form-control" id="venue" placeholder="Enter venue location" required>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Select Your Menu</h2>
+    
+        <!-- Cuisine Type Selection -->
+        <div class="mb-3">
+            <label for="cuisineType" class="form-label">Cuisine Type:</label>
+            <select id="cuisineType" class="form-select" onchange="updateMenuOptions()">
+                <option value="">Choose Cuisine</option>
+                <option value="pakistani">Pakistani</option>
+                <option value="continental">Continental</option>
+                <option value="bbq">BBQ</option>
+                <option value="fast-food">Fast Food</option>
+            </select>
+        </div>
+    
+        <!-- Dish Selection Grid (3 Columns) -->
+        <div class="mb-3">
+            <label class="form-label">Select Dishes:</label>
+            <div id="dishOptions" class="row"></div>
+        </div>
+    
+        <!-- Beverages Selection (3 Columns) -->
+        <div class="mb-3">
+            <label class="form-label">Select Beverages:</label>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="softDrinks">
+                    <label class="form-check-label" for="softDrinks">Soft Drinks</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="lassi">
+                    <label class="form-check-label" for="lassi">Lassi</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="tea">
+                    <label class="form-check-label" for="tea">Tea</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="coffee">
+                    <label class="form-check-label" for="coffee">Coffee</label>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Meetha (Desserts) Selection (3 Columns) -->
+        <div class="mb-3">
+            <label class="form-label">Select Meetha:</label>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="gulabJamun">
+                    <label class="form-check-label" for="gulabJamun">Gulab Jamun</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="jalebi">
+                    <label class="form-check-label" for="jalebi">Jalebi</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="kheer">
+                    <label class="form-check-label" for="kheer">Kheer</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="iceCream">
+                    <label class="form-check-label" for="iceCream">Ice Cream</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="custard">
+                    <label class="form-check-label" for="custard">Custard</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="gajarKaHalwa">
+                    <label class="form-check-label" for="gajarKaHalwa">Gajar ka Halwa</label>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Dietary Preferences -->
+        <div class="mb-3">
+            <label class="form-label">Dietary Preferences:</label>
+            <select id="dietaryPreferences" class="form-select">
+                <option value="none">No Preference</option>
+                <option value="veg">Vegetarian</option>
+                <option value="non-veg">Non-Vegetarian</option>
+                <option value="halal">Halal</option>
+            </select>
+        </div>
+    
+        <!-- Custom Menu Input -->
+        <div class="mb-3">
+            <label for="customMenu" class="form-label">Add Custom Dishes (Optional):</label>
+            <input type="text" id="customMenu" class="form-control" placeholder="Enter custom dish...">
+        </div>
+    
+    </section>
+    
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Seating Arrangement</h2>
+    
+        <!-- Male & Female Guest Count -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="maleCount" class="form-label">Male Guests:</label>
+                <input type="number" id="maleCount" class="form-control" min="0" placeholder="Enter number of male guests">
+            </div>
+            <div class="col-md-6">
+                <label for="femaleCount" class="form-label">Female Guests:</label>
+                <input type="number" id="femaleCount" class="form-control" min="0" placeholder="Enter number of female guests">
+            </div>
+        </div>
+    
+        <!-- Seating Layout Selection -->
+        <div class="mb-3">
+            <label class="form-label">Seating Layout:</label>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" class="form-check-input" name="seatingLayout" id="roundTables">
+                    <label class="form-check-label" for="roundTables">Round Tables</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" class="form-check-input" name="seatingLayout" id="longTables">
+                    <label class="form-check-label" for="longTables">Long Banquet Tables</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" class="form-check-input" name="seatingLayout" id="stageSeating">
+                    <label class="form-check-label" for="stageSeating">Stage & Audience Seating</label>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Special Arrangements -->
+        <div class="mb-3">
+            <label class="form-label">Special Arrangements:</label>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="vipArea">
+                    <label class="form-check-label" for="vipArea">VIP Area</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="familyArea">
+                    <label class="form-check-label" for="familyArea">Family Section</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" class="form-check-input" id="kidsZone">
+                    <label class="form-check-label" for="kidsZone">Kids Zone</label>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    
+   
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>We provide top-notch event planning services to make your special moments unforgettable.</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="/Homepage/index.html">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="/Contact us/contactUS.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: info@yourevent.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: Your City, Country</p>
+            </div>
+            <div class="footer-section social footer-links">
+                <h2 >Follow Us</h2>
+                <a href="#"><img src="/images/el--facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/images/line-md--twitter-x-alt.png" alt="Twitter"></a>
+                <a href="#"><img src="/images/ri--instagram-line.png" alt="Instagram"></a>
+                <a href="#"><img src="/images/teenyicons--linkedin-outline.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Your Event | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- JavaScript to Change Dishes Based on Cuisine -->
+     <script>
+        function updateMenuOptions() {
+            const cuisine = document.getElementById("cuisineType").value;
+            const dishOptionsDiv = document.getElementById("dishOptions");
+            dishOptionsDiv.innerHTML = ""; // Clear previous options
+    
+            let dishes = [];
+    
+            if (cuisine === "pakistani") {
+                dishes = ["Biryani", "Qorma", "Nihari", "Karahi", "Paya", "Haleem" ,"Fish" , "Chicken Pakora" ];
+            } else if (cuisine === "continental") {
+                dishes = ["Pasta", "Steak", "Grilled Chicken", "Salad", "Lasagna", "Soup"];
+            } else if (cuisine === "bbq") {
+                dishes = ["Tikka", "Malai Boti", "Seekh Kebab", "Chapli Kebab", "Behari Boti", "Grilled Fish"];
+            } else if (cuisine === "fast-food") {
+                dishes = ["Burger", "Pizza", "Fries", "Shawarma", "Hot Dog", "Sandwich"];
+            }
+    
+            dishes.forEach(dish => {
+                const col = document.createElement("div");
+                col.className = "col-md-4 mb-2"; // 3 items per row
+    
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.className = "form-check-input";
+                checkbox.id = dish.toLowerCase().replace(" ", "-");
+    
+                const label = document.createElement("label");
+                label.className = "form-check-label ms-2";
+                label.htmlFor = checkbox.id;
+                label.textContent = dish;
+    
+                col.appendChild(checkbox);
+                col.appendChild(label);
+    
+                dishOptionsDiv.appendChild(col);
+            });
+        }
+    </script>
+</body>
+</html>
